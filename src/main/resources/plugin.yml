@@ -1,0 +1,82 @@
+name: AaalibiEssentials
+version: '${project.version}'
+main: com.aaalibi.aaalibiessentials.Main
+api-version: 1.17
+authors: [ Aaalibi ]
+commands:
+  hello:
+    description: Test Command
+    usage: /<command>
+    permission: aaalibiessentials.hello
+  gmc:
+    description: Creative
+    usage: /<command>
+    permission: aaalibiessentials.gmc
+  gms:
+    description: Survival
+    usage: /<command>
+    permission: aaalibiessentials.gms
+  day:
+    description: Day
+    usage: /<command>
+    permission: aaalibiessentials.day
+  fly:
+    description: fly
+    usage: /<command>
+    permission: aaalibiessentials.fly
+  ip:
+    description: ip
+    usage: /<command>
+    permission: aaalibiessentials.ip
+  time:
+    description: time
+    usage: /<command>
+    permission: aaalibiessentials.time
+  night:
+    description: night
+    usage: /<command>
+    permission: aaalibiessentials.night
+  ping:
+    description: test
+    usage: /<command>
+    permission: aaalibiessentials.ping
+  heal:
+    description: heal
+    usage: /<command>
+    permission: aaalibiessentials.heal
+  kill:
+    description: kill
+    usage: /<command>
+    permission: aaalibiessentials.kill
+  tp:
+    description: teleport
+    usage: /<command>
+    permission: aaalibiessentials.tp
+  give:
+    description: give
+    usage: /<command>
+    permission: aaalibiessentials.give
+  strike:
+    description: strike
+    usage: /<command>
+    permission: aaalibiessentials.strike
+  fix:
+    description: fix
+    usage: /<command>
+    permission: aaalibiessentials.fix
+  eweather:
+    description: weather
+    usage: /<command>
+    permission: aaalibiessentials.weather
+  armor:
+    description: armor
+    usage: /<command>
+    permission: aaalibiessentials.armor
+  hat:
+    description: hat
+    usage: /<command>
+    permission: aaalibiessentials.hat
+  broadcast:
+    description: broadcast
+    usage: /<command>
+    permission: aaalibiessentials.broadcast
