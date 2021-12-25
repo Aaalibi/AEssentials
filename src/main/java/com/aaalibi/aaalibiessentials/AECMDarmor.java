@@ -10,10 +10,16 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.plugin.Plugin;
 
 import static org.bukkit.Bukkit.getPlayer;
 
-public class armor implements CommandExecutor {
+public class AECMDarmor implements CommandExecutor {
+
+    public Plugin plugin = Main.getPlugin(Main.class);
+
+    String prefixplugin = plugin.getConfig().getString("prefix").replace("&", "§");
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -36,7 +42,7 @@ public class armor implements CommandExecutor {
                 inv.setChestplate(chestplate);
                 inv.setLeggings(legs);
                 inv.setBoots(boots);
-                sender.sendMessage("§9§lAE§7> Set default OP armour.");
+                sender.sendMessage(prefixplugin + "Set default OP armour.");
             }
 
         }

@@ -11,13 +11,18 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.plugin.Plugin;
 
 import java.util.Arrays;
 
 import static org.bukkit.Bukkit.getPlayer;
 import static org.bukkit.Bukkit.getServer;
 
-public class broadcast implements CommandExecutor {
+public class AECMDbroadcast implements CommandExecutor {
+
+    public Plugin plugin = Main.getPlugin(Main.class);
+
+    String prefixplugin = plugin.getConfig().getString("prefix").replace("&", "§");
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

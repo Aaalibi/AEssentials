@@ -11,10 +11,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.plugin.Plugin;
 
 import static org.bukkit.Bukkit.getPlayer;
 
-public class strike implements CommandExecutor {
+public class AECMDstrike implements CommandExecutor {
+
+    public Plugin plugin = Main.getPlugin(Main.class);
+
+    String prefixplugin = plugin.getConfig().getString("prefix").replace("&", "§");
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -29,7 +34,7 @@ public class strike implements CommandExecutor {
                     } else {
                         Location loc = block.getLocation();
                         loc.getWorld().strikeLightningEffect(loc);
-                        sender.sendMessage("§9§lAE§7> Struck at cursor position.");
+                        sender.sendMessage(prefixplugin + "Struck at cursor position.");
                     }
 
                 } catch(NullPointerException e) {

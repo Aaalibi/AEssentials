@@ -5,8 +5,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
-public class weather implements CommandExecutor {
+public class AECMDweather implements CommandExecutor {
+
+    public Plugin plugin = Main.getPlugin(Main.class);
+
+    String prefixplugin = plugin.getConfig().getString("prefix").replace("&", "§");
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -15,19 +20,19 @@ public class weather implements CommandExecutor {
                 if(sender.hasPermission("aaalibiessentials.weather")) {
                     if(args[0].equals("clear")) {
                         ((Player) sender).getLocation().getWorld().setClearWeatherDuration(24000);
-                        sender.sendMessage("§9§lAE§7> Weather set to clear.");
+                        sender.sendMessage(prefixplugin + "Weather set to clear.");
                     }
                     else if(args[0].equals("rain")) {
                         ((Player) sender).getLocation().getWorld().setStorm(true);
                         ((Player) sender).getLocation().getWorld().setThundering(false);
-                        sender.sendMessage("§9§lAE§7> Weather set to rain.");
+                        sender.sendMessage(prefixplugin + "Weather set to rain.");
                     }
                     else if(args[0].equals("storm")) {
                         ((Player) sender).getLocation().getWorld().setStorm(true);
-                        sender.sendMessage("§9§lAE§7> Weather set to storm.");
+                        sender.sendMessage(prefixplugin + "Weather set to storm.");
                     }
                     else {
-                        sender.sendMessage("§9§lAE§7> Usage: /weather (clear, rain, storm)");
+                        sender.sendMessage(prefixplugin + "Usage: /weather (clear, rain, storm)");
                     }
                 }
 
@@ -38,7 +43,7 @@ public class weather implements CommandExecutor {
             }
         }
         catch(Exception e) {
-            sender.sendMessage("§9§lAE§7> Usage: /weather (clear, rain, storm)");
+            sender.sendMessage(prefixplugin + "Usage: /weather (clear, rain, storm)");
 
         }
 
